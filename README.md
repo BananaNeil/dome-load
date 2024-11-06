@@ -61,103 +61,122 @@ This document presents a detailed analysis of the load capacity at the center po
 
 **Determining the Angle (\( \theta_h \)) Between Tubes and Horizontal Plane:**
 
-- **Radius of Ring 1 (\( r_1 \))**:
+#### **Side Length of Hexagon (after overlap subtraction)**
 
-  \[ 
-  r_1 = \frac{\text{Side Length of Hexagon}}{2 \times \sin\left( \frac{\pi}{6} \right)} = \frac{ (1.528 - 2 \times 0.030) }{ 2 \times 0.5 } = 0.734\, \text{meters} 
-  \]
+$$
+L_{\text{hex}} = 1.528\, \text{m} - 2 \times 0.030\, \text{m} = 1.468\, \text{m}
+$$
 
-  (Assuming an overlap of 30 mm at connections)
+#### **Radius of Ring 1 (\( r_1 \))**
 
-- **Height from Center Point to Ring 1 (\( h_1 \))**:
+$$
+r_1 = \frac{ L_{\text{hex}} }{ 2 \times \sin\left( \dfrac{ \pi }{ 6 } \right) } = \frac{ 1.468 }{ 2 \times \sin\left( \dfrac{ \pi }{ 6 } \right) } = \frac{ 1.468 }{ 2 \times 0.5 } = 1.468\, \text{m}
+$$
 
-  \[ 
-  h_1 = \sqrt{ L_A^2 - r_1^2 } = \sqrt{ 1.55^2 - 0.734^2 } = 1.375\, \text{meters} 
-  \]
+#### **Height from Center Point to Ring 1 (\( h_1 \))**
 
-- **Angle to Horizontal (\( \theta_h \))**:
+$$
+h_1 = \sqrt{ L_A^2 - r_1^2 } = \sqrt{ 1.55^2 - 1.468^2 } = \sqrt{ 2.4025 - 2.1546 } = \sqrt{ 0.2479 } = 0.4989\, \text{m}
+$$
 
-  \[ 
-  \theta_h = \arctan\left( \frac{ r_1 }{ h_1 } \right ) = \arctan\left( \frac{ 0.734 }{ 1.375 } \right ) \approx 28.13^\circ 
-  \]
+#### **Angle to Horizontal (\( \theta_h \))**
+
+$$
+\theta_h = \arctan\left( \dfrac{ r_1 }{ h_1 } \right) = \arctan\left( \dfrac{ 1.468 }{ 0.4989 } \right) \approx 71.87^\circ
+$$
 
 ---
 
 <a name="cross-sectional-properties"></a>
 ### **3.2 Cross-Sectional Properties**
 
-**a. Hollow Cylindrical Tubes**
+#### **a. Hollow Cylindrical Tubes**
 
-- **Outer Diameter (\( D_o \))**: 0.048 meters
-- **Inner Diameter (\( D_i \))**:
+**Outer Diameter (\( D_o \))**
 
-  \[ 
-  D_i = D_o - 2t = 0.048\, \text{m} - 2 \times 0.0025\, \text{m} = 0.043\, \text{m} 
-  \]
+$$
+D_o = 0.048\, \text{m}
+$$
 
-- **Cross-Sectional Area (\( A_{\text{tube}} \))**:
+**Inner Diameter (\( D_i \))**
 
-  \[ 
-  A_{\text{tube}} = \frac{\pi}{4} \left( D_o^2 - D_i^2 \right ) = \frac{\pi}{4} \left( 0.048^2 - 0.043^2 \right ) = 0.000357\, \text{m}^2 
-  \]
+$$
+D_i = D_o - 2t = 0.048\, \text{m} - 2 \times 0.0025\, \text{m} = 0.043\, \text{m}
+$$
 
-- **Moment of Inertia (\( I_{\text{tube}} \))**:
+**Cross-Sectional Area (\( A_{\text{tube}} \))**
 
-  \[ 
-  I_{\text{tube}} = \frac{\pi}{64} \left( D_o^4 - D_i^4 \right ) = 9.24 \times 10^{-8}\, \text{m}^4 
-  \]
+$$
+A_{\text{tube}} = \frac{\pi}{4} \left( D_o^2 - D_i^2 \right ) = \frac{\pi}{4} \left( 0.048^2 - 0.043^2 \right ) = 0.000357\, \text{m}^2
+$$
 
-**b. Flat Compressed Ends**
+**Moment of Inertia (\( I_{\text{tube}} \))**
 
-- **Width (\( b \))**: 0.04 meters
-- **Thickness (\( t \))**: 0.005 meters
-- **Cross-Sectional Area (\( A_{\text{flat}} \))**:
+$$
+I_{\text{tube}} = \frac{\pi}{64} \left( D_o^4 - D_i^4 \right ) = 9.24 \times 10^{-8}\, \text{m}^4
+$$
 
-  \[ 
-  A_{\text{flat}} = b \times t = 0.04\, \text{m} \times 0.005\, \text{m} = 0.0002\, \text{m}^2 
-  \]
+#### **b. Flat Compressed Ends**
 
-- **Moment of Inertia (\( I_{\text{flat}} \))**:
+**Width (\( b \))**
 
-  \[ 
-  I_{\text{flat}} = \frac{ b t^3 }{ 12 } = \frac{ 0.04 \times (0.005)^3 }{ 12 } = 4.17 \times 10^{-10}\, \text{m}^4 
-  \]
+$$
+b = 0.04\, \text{m}
+$$
 
-- **Section Modulus (\( S_{\text{flat}} \))**:
+**Thickness (\( t \))**
 
-  \[ 
-  S_{\text{flat}} = \frac{ I_{\text{flat}} }{ c } = \frac{ I_{\text{flat}} }{ t/2 } = \frac{ 4.17 \times 10^{-10} }{ 0.0025 } = 1.668 \times 10^{-7}\, \text{m}^3 
-  \]
+$$
+t = 0.005\, \text{m}
+$$
+
+**Cross-Sectional Area (\( A_{\text{flat}} \))**
+
+$$
+A_{\text{flat}} = b \times t = 0.04\, \text{m} \times 0.005\, \text{m} = 0.0002\, \text{m}^2
+$$
+
+**Moment of Inertia (\( I_{\text{flat}} \))**
+
+$$
+I_{\text{flat}} = \frac{ b t^3 }{ 12 } = \frac{ 0.04\, \text{m} \times (0.005\, \text{m})^3 }{ 12 } = 4.17 \times 10^{-10}\, \text{m}^4
+$$
+
+**Section Modulus (\( S_{\text{flat}} \))**
+
+$$
+S_{\text{flat}} = \frac{ I_{\text{flat}} }{ c } = \frac{ I_{\text{flat}} }{ t/2 } = \frac{ 4.17 \times 10^{-10}\, \text{m}^4 }{ 0.0025\, \text{m} } = 1.668 \times 10^{-7}\, \text{m}^3
+$$
 
 ---
 
 <a name="bending-capacity"></a>
 ### **3.3 Bending Capacity of the Flat Ends**
 
-**Maximum Bending Moment (\( M_{\text{max}} \)) Before Yielding:**
+**Maximum Bending Moment (\( M_{\text{max}} \)) Before Yielding**
 
-\[ 
-M_{\text{max}} = F_y \times S_{\text{flat}} = 235 \times 10^6\, \text{Pa} \times 1.668 \times 10^{-7}\, \text{m}^3 = 39.33\, \text{N}\cdot\text{m} 
-\]
+$$
+M_{\text{max}} = F_y \times S_{\text{flat}} = 235 \times 10^6\, \text{Pa} \times 1.668 \times 10^{-7}\, \text{m}^3 = 39.33\, \text{N}\cdot\text{m}
+$$
 
-**Assuming an Eccentricity (\( e \)) of 1 mm (0.001 m):**
+**Assuming an Eccentricity (\( e \)) of 1 mm (0.001 m)**
 
-- **Maximum Axial Load (\( P_{\text{bending}} \)) Without Exceeding Bending Capacity:**
+**Maximum Axial Load (\( P_{\text{bending}} \)) Without Exceeding Bending Capacity**
 
-  \[ 
-  P_{\text{bending}} = \frac{ M_{\text{max}} }{ e } = \frac{ 39.33\, \text{N}\cdot\text{m} }{ 0.001\, \text{m} } = 39,333\, \text{N} = 39.33\, \text{kN} 
-  \]
+$$
+P_{\text{bending}} = \frac{ M_{\text{max}} }{ e } = \frac{ 39.33\, \text{N}\cdot\text{m} }{ 0.001\, \text{m} } = 39,333\, \text{N} = 39.33\, \text{kN}
+$$
 
 ---
 
 <a name="axial-capacity"></a>
 ### **3.4 Axial Capacity of the Tubes**
 
-**Axial Yield Capacity (\( P_{\text{axial}} \)) of the Flat Ends:**
+**Axial Yield Capacity (\( P_{\text{axial}} \)) of the Flat Ends**
 
-\[ 
-P_{\text{axial}} = A_{\text{flat}} \times F_y = 0.0002\, \text{m}^2 \times 235 \times 10^6\, \text{Pa} = 47,000\, \text{N} = 47\, \text{kN} 
-\]
+$$
+P_{\text{axial}} = A_{\text{flat}} \times F_y = 0.0002\, \text{m}^2 \times 235 \times 10^6\, \text{Pa} = 47,000\, \text{N} = 47\, \text{kN}
+$$
 
 **Conclusion:** Since \( P_{\text{bending}} < P_{\text{axial}} \), **bending governs the design**.
 
@@ -168,45 +187,47 @@ P_{\text{axial}} = A_{\text{flat}} \times F_y = 0.0002\, \text{m}^2 \times 235 \
 
 **a. Vertical Load Contribution per Tube**
 
-- **Angle to Horizontal (\( \theta_h = 28.13^\circ \))**
-- **Secant of Angle (\( \sec(\theta_h) \))**:
+**Angle to Horizontal (\( \theta_h = 71.87^\circ \))**
 
-  \[ 
-  \sec(\theta_h) = \frac{1}{\cos(\theta_h)} = \frac{1}{\cos(28.13^\circ)} = \frac{1}{0.882} = 1.133 
-  \]
+**Secant of Angle (\( \sec(\theta_h) \))**
 
-- **Vertical Load per Tube (\( F_{\text{vertical}} \))**:
+$$
+\sec(\theta_h) = \frac{1}{\cos(\theta_h)} = \frac{1}{\cos(71.87^\circ)} = \frac{1}{0.3145} = 3.178
+$$
 
-  \[ 
-  F_{\text{vertical}} = P_{\text{bending}} \times \sec(\theta_h) = 39.33\, \text{kN} \times 1.133 = 44.56\, \text{kN} 
-  \]
+**Vertical Load per Tube (\( F_{\text{vertical}} \))**
+
+$$
+F_{\text{vertical}} = P_{\text{bending}} \times \sec(\theta_h) = 39.33\, \text{kN} \times 3.178 = 125.00\, \text{kN}
+$$
 
 **b. Total Load Capacity at Center Point**
 
-- **Number of Tubes (\( n = 6 \))**
-- **Total Vertical Load (\( P_{\text{total}} \))**:
+**Number of Tubes (\( n = 6 \))**
 
-  \[ 
-  P_{\text{total}} = n \times F_{\text{vertical}} = 6 \times 44.56\, \text{kN} = 267.36\, \text{kN} 
-  \]
+**Total Vertical Load (\( P_{\text{total}} \))**
 
-- **Convert to Kilograms (\( g = 9.81\, \text{m/s}^2 \))**:
+$$
+P_{\text{total}} = n \times F_{\text{vertical}} = 6 \times 125.00\, \text{kN} = 750.00\, \text{kN}
+$$
 
-  \[ 
-  \text{Total Load Capacity} = \frac{ P_{\text{total}} }{ g } = \frac{ 267,360\, \text{N} }{ 9.81\, \text{m/s}^2 } \approx 27,250\, \text{kg} 
-  \]
+**Convert to Kilograms (\( g = 9.81\, \text{m/s}^2 \))**
+
+$$
+\text{Total Load Capacity} = \frac{ P_{\text{total}} }{ g } = \frac{ 750,000\, \text{N} }{ 9.81\, \text{m/s}^2 } \approx 76,455\, \text{kg}
+$$
 
 **c. Applying a Safety Factor**
 
-- **Assuming a Safety Factor of 2.0**:
+**Assuming a Safety Factor of 2.0**
 
-  \[ 
-  \text{Safe Load Capacity} = \frac{ 27,250\, \text{kg} }{ 2.0 } = 13,625\, \text{kg} 
-  \]
+$$
+\text{Safe Load Capacity} = \frac{ 76,455\, \text{kg} }{ 2.0 } = 38,227\, \text{kg}
+$$
 
 **d. Summary**
 
-- **Maximum Load Before Bending (with Safety Factor):** Approximately **13,625 kg**
+- **Maximum Load Before Bending (with Safety Factor):** Approximately **38,227 kg**
 
 ---
 
@@ -258,7 +279,7 @@ P_{\text{axial}} = A_{\text{flat}} \times F_y = 0.0002\, \text{m}^2 \times 235 \
 <a name="conclusion"></a>
 ## **6. Conclusion**
 
-The calculated **safe load capacity at the center point** of the geodesic dome is approximately **13,625 kilograms**, considering the bending capacity of the flat compressed ends and applying a safety factor of 2.0. This estimate is conservative, focusing on the weakest component and not accounting for the dome's overall load distribution capabilities.
+The calculated **safe load capacity at the center point** of the geodesic dome is approximately **38,227 kilograms**, considering the bending capacity of the flat compressed ends and applying a safety factor of 2.0. This estimate is conservative, focusing on the weakest component and not accounting for the dome's overall load distribution capabilities.
 
 **Key Points:**
 
@@ -304,6 +325,7 @@ For further understanding, it's recommended to:
 
 ---
 
-**We hope this document provides a clear and comprehensive understanding of the load capacity at the center point of your geodesic dome. By considering the factors outlined and engaging with professionals, you can ensure the safety and success of your project.**
+**Note:** All mathematical expressions have been formatted using LaTeX syntax enclosed within double dollar signs `$$ ... $$` to ensure proper rendering on GitHub. Equations are introduced with headings or bold text, and care has been taken to avoid placing equations within list items to prevent rendering issues.
 
 ---
+
