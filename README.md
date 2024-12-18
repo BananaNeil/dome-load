@@ -10,12 +10,12 @@
    - [Bending Capacity of the Flat Ends](#bending-capacity)
    - [Axial Capacity of the Tubes](#axial-capacity)
    - [Calculation of Load Capacity at the Center Point](#center-point-load)
-4. [Strength of Other Points in the Dome](#strength-other-points)
+4. [Conservative Nature of the Estimate](#conservative-estimate)
+   - [Load Sharing and Structural Redundancy](#load-sharing-and-structural-redundancy)
+   - [Potential for Higher Load Capacity](#potential-capacity)
+5. [Strength of Other Points in the Dome](#strength-other-points)
    - [Load Distribution in a Geodesic Dome](#load-distribution)
    - [Increased Strength at Other Points](#increased-strength)
-5. [Conservative Nature of the Estimate](#conservative-estimate)
-   - [Load Sharing and Structural Redundancy](#load-sharing)
-   - [Potential for Higher Load Capacity](#potential-capacity)
 6. [Conclusion](#conclusion)
 7. [Recommendations](#recommendations)
 
@@ -24,7 +24,7 @@
 <a name="introduction"></a>
 ## **1. Introduction**
 
-This document presents a detailed analysis of the load capacity at the center point of an 18-meter diameter geodesic dome constructed with specific steel tube dimensions and configurations. The calculations aim to determine the maximum load the center point can support before bending occurs in the structural members, specifically focusing on the flat compressed ends of the steel tubes.
+This document presents a detailed analysis of the load capacity at the center point of an 18-meter diameter geodesic dome constructed with specific steel tube dimensions and configurations. The calculations aim to determine the load the center point can safely support before bending occurs in the structural members, focusing specifically on the flat compressed ends of the steel tubes.
 
 ---
 
@@ -35,17 +35,23 @@ This document presents a detailed analysis of the load capacity at the center po
 - **Height:** 7 meters
 - **Steel Tubes:**
   - **Cylindrical Diameter:** 0.048 meters
-  - **Wall Thickness:** 0.0025 meters (assuming compressed end thickness is 0.005 meters and wall thickness is half that)
-- **Compressed Ends:**
+  - **Wall Thickness:** 0.0025 meters (assuming compressed end thickness is 0.005 m and wall thickness is half that)
+- **Compressed Ends (this is the weakest point of the structure, so we will focus on it for the analysis):**
   - **Thickness:** 0.005 meters
   - **Width:** 0.04 meters
-  - **Flat Length (from crease to bolt):** 0.080 meters
+  - **Flat Length:** 0.080 meters (from crease to bolt)
+ 
+![IMG_2534 2](https://github.com/user-attachments/assets/152f08fe-90b7-4505-a822-c2d35bad6266)
+
 - **Center Point Configuration:**
   - **Six Tubes (Type A):** Length 1.55 meters (including compressed portions)
-  - **Ring 1:** Hexagon formed by Type B tubes (6 tubes, length 1.528 meters)
-- **Materials:**
-  - **Steel Grade:** S235 (Yield Strength \( F_y = 235 \) MPa)
-  - **Modulus of Elasticity:** \( E = 200 \) GPa
+  - **Ring 1:** Hexagon formed by six Type B tubes, each 1.528 meters long
+- **Material Properties:**
+  - **Yield Strength ($F_y$)**: 235 MPa (235 × 10^6 Pa)
+  - **Modulus of Elasticity ($E$)**: 200 GPa (200 × 10^9 Pa)
+
+<img width="928" alt="Screenshot 2024-12-18 at 13 25 52" src="https://github.com/user-attachments/assets/a3214f30-395c-4bb5-a2b0-3ee976c37d4c" />
+
 
 ---
 
@@ -55,34 +61,35 @@ This document presents a detailed analysis of the load capacity at the center po
 <a name="material-properties"></a>
 ### **3.1 Material Properties and Geometric Parameters**
 
-- **Yield Strength (\( F_y \))**: 235 MPa (\( 235 \times 10^6 \) Pa)
-- **Modulus of Elasticity (\( E \))**: 200 GPa (\( 200 \times 10^9 \) Pa)
-- **Angle of Tubes to Horizontal Plane (\( \theta_h \))**: Determined from geometry
+**Determining the Angle ($\theta_1$) Between Tubes and the Horizontal Plane:**
 
-**Determining the Angle (\( \theta_h \)) Between Tubes and Horizontal Plane:**
+<img width="979" alt="Screenshot 2024-12-18 at 13 37 39" src="https://github.com/user-attachments/assets/9d123373-b95c-4d7a-a30c-22374d2a7fa6" />
 
-#### **Side Length of Hexagon (after overlap subtraction)**
 
-$$
-L_{\text{hex}} = 1.528\, \text{m} - 2 \times 0.030\, \text{m} = 1.468\, \text{m}
-$$
-
-#### **Radius of Ring 1 (\( r_1 \))**
+**Side Length of Hexagon (after overlap):**
 
 $$
-r_1 = \frac{ L_{\text{hex}} }{ 2 \times \sin\left( \dfrac{ \pi }{ 6 } \right) } = \frac{ 1.468 }{ 2 \times \sin\left( \dfrac{ \pi }{ 6 } \right) } = \frac{ 1.468 }{ 2 \times 0.5 } = 1.468\, \text{m}
+L_{\text{hex}} = 1.528\,\text{m} - 2 \times 0.030\,\text{m} = 1.468\,\text{m}
 $$
 
-#### **Height from Center Point to Ring 1 (\( h_1 \))**
+**Radius of Ring 1 ($r_1$)**
 
 $$
-h_1 = \sqrt{ L_A^2 - r_1^2 } = \sqrt{ 1.55^2 - 1.468^2 } = \sqrt{ 2.4025 - 2.1546 } = \sqrt{ 0.2479 } = 0.4989\, \text{m}
+r_1 = \frac{L_{\text{hex}}}{2 \sin(\pi/6)} = \frac{1.468}{2 \times 0.5} = 1.468\,\text{m}
 $$
 
-#### **Angle to Horizontal (\( \theta_h \))**
+**Height from Center Point to Ring 1 ($h_1$)**
+
+Given Tube A length $L_A = 1.55\,\text{m}$:
 
 $$
-\theta_h = \arctan\left( \dfrac{ r_1 }{ h_1 } \right) = \arctan\left( \dfrac{ 1.468 }{ 0.4989 } \right) \approx 71.87^\circ
+h_1 = \sqrt{L_A^2 - r_1^2} = \sqrt{1.55^2 - 1.468^2} = \sqrt{2.4025 - 2.1546} = \sqrt{0.2479} = 0.4989\,\text{m}
+$$
+
+**Angle to Horizontal ($\theta_1$)**
+
+$$
+\theta_1 = \arctan\left(\frac{h_1}{r_1}\right) = \arctan\left(\frac{0.4989}{1.468}\right) \approx 18.8^\circ
 $$
 
 ---
@@ -90,62 +97,62 @@ $$
 <a name="cross-sectional-properties"></a>
 ### **3.2 Cross-Sectional Properties**
 
-#### **a. Hollow Cylindrical Tubes**
+**a. Hollow Cylindrical Tubes**
 
-**Outer Diameter (\( D_o \))**
-
-$$
-D_o = 0.048\, \text{m}
-$$
-
-**Inner Diameter (\( D_i \))**
+**Outer Diameter ($D_o$)**
 
 $$
-D_i = D_o - 2t = 0.048\, \text{m} - 2 \times 0.0025\, \text{m} = 0.043\, \text{m}
+D_o = 0.048\,\text{m}
 $$
 
-**Cross-Sectional Area (\( A_{\text{tube}} \))**
+**Inner Diameter ($D_i$)**
 
 $$
-A_{\text{tube}} = \frac{\pi}{4} \left( D_o^2 - D_i^2 \right ) = \frac{\pi}{4} \left( 0.048^2 - 0.043^2 \right ) = 0.000357\, \text{m}^2
+D_i = D_o - 2t = 0.048\,\text{m} - 2 \times 0.0025\,\text{m} = 0.043\,\text{m}
 $$
 
-**Moment of Inertia (\( I_{\text{tube}} \))**
+**Cross-Sectional Area ($A_{\text{tube}}$)**
 
 $$
-I_{\text{tube}} = \frac{\pi}{64} \left( D_o^4 - D_i^4 \right ) = 9.24 \times 10^{-8}\, \text{m}^4
+A_{\text{tube}} = \frac{\pi}{4}(D_o^2 - D_i^2) = \frac{\pi}{4}(0.048^2 - 0.043^2) = 0.000357\,\text{m}^2
 $$
 
-#### **b. Flat Compressed Ends**
-
-**Width (\( b \))**
+**Moment of Inertia ($I_{\text{tube}}$)**
 
 $$
-b = 0.04\, \text{m}
+I_{\text{tube}} = \frac{\pi}{64}(D_o^4 - D_i^4) = 9.24 \times 10^{-8}\,\text{m}^4
 $$
 
-**Thickness (\( t \))**
+**b. Flat Compressed Ends**
+
+**Width ($b$)**
 
 $$
-t = 0.005\, \text{m}
+b = 0.04\,\text{m}
 $$
 
-**Cross-Sectional Area (\( A_{\text{flat}} \))**
+**Thickness ($t$)**
 
 $$
-A_{\text{flat}} = b \times t = 0.04\, \text{m} \times 0.005\, \text{m} = 0.0002\, \text{m}^2
+t = 0.005\,\text{m}
 $$
 
-**Moment of Inertia (\( I_{\text{flat}} \))**
+**Cross-Sectional Area ($A_{\text{flat}}$)**
 
 $$
-I_{\text{flat}} = \frac{ b t^3 }{ 12 } = \frac{ 0.04\, \text{m} \times (0.005\, \text{m})^3 }{ 12 } = 4.17 \times 10^{-10}\, \text{m}^4
+A_{\text{flat}} = b \times t = 0.04\,\text{m} \times 0.005\,\text{m} = 0.0002\,\text{m}^2
 $$
 
-**Section Modulus (\( S_{\text{flat}} \))**
+**Moment of Inertia ($I_{\text{flat}}$)**
 
 $$
-S_{\text{flat}} = \frac{ I_{\text{flat}} }{ c } = \frac{ I_{\text{flat}} }{ t/2 } = \frac{ 4.17 \times 10^{-10}\, \text{m}^4 }{ 0.0025\, \text{m} } = 1.668 \times 10^{-7}\, \text{m}^3
+I_{\text{flat}} = \frac{b t^3}{12} = \frac{0.04 \times (0.005)^3}{12} = 4.17 \times 10^{-10}\,\text{m}^4
+$$
+
+**Section Modulus ($S_{\text{flat}}$)**
+
+$$
+S_{\text{flat}} = \frac{I_{\text{flat}}}{t/2} = \frac{4.17 \times 10^{-10}\,\text{m}^4}{0.0025\,\text{m}} = 1.668 \times 10^{-7}\,\text{m}^3
 $$
 
 ---
@@ -153,18 +160,18 @@ $$
 <a name="bending-capacity"></a>
 ### **3.3 Bending Capacity of the Flat Ends**
 
-**Maximum Bending Moment (\( M_{\text{max}} \)) Before Yielding**
+**Maximum Bending Moment ($M_{\text{max}}$) Before Yielding:**
 
 $$
-M_{\text{max}} = F_y \times S_{\text{flat}} = 235 \times 10^6\, \text{Pa} \times 1.668 \times 10^{-7}\, \text{m}^3 = 39.33\, \text{N}\cdot\text{m}
+M_{\text{max}} = F_y \times S_{\text{flat}} = 235 \times 10^6\,\text{Pa} \times 1.668 \times 10^{-7}\,\text{m}^3 = 39.33\,\text{N}\cdot\text{m}
 $$
 
-**Assuming an Eccentricity (\( e \)) of 1 mm (0.001 m)**
+**Assuming an Eccentricity ($e$) of 1 mm (0.001 m):**
 
-**Maximum Axial Load (\( P_{\text{bending}} \)) Without Exceeding Bending Capacity**
+**Maximum Axial Load ($P_{\text{bending}}$) Without Exceeding Bending Capacity:**
 
 $$
-P_{\text{bending}} = \frac{ M_{\text{max}} }{ e } = \frac{ 39.33\, \text{N}\cdot\text{m} }{ 0.001\, \text{m} } = 39,333\, \text{N} = 39.33\, \text{kN}
+P_{\text{bending}} = \frac{M_{\text{max}}}{e} = \frac{39.33\,\text{N}\cdot\text{m}}{0.001\,\text{m}} = 39,333\,\text{N} = 39.33\,\text{kN}
 $$
 
 ---
@@ -172,160 +179,116 @@ $$
 <a name="axial-capacity"></a>
 ### **3.4 Axial Capacity of the Tubes**
 
-**Axial Yield Capacity (\( P_{\text{axial}} \)) of the Flat Ends**
+**Axial Yield Capacity ($P_{\text{axial}}$) of Flat Ends:**
 
 $$
-P_{\text{axial}} = A_{\text{flat}} \times F_y = 0.0002\, \text{m}^2 \times 235 \times 10^6\, \text{Pa} = 47,000\, \text{N} = 47\, \text{kN}
+P_{\text{axial}} = A_{\text{flat}} \times F_y = 0.0002\,\text{m}^2 \times 235 \times 10^6\,\text{Pa} = 47,000\,\text{N} = 47\,\text{kN}
 $$
 
-**Conclusion:** Since \( P_{\text{bending}} < P_{\text{axial}} \), **bending governs the design**.
+**Conclusion:** Since $P_{\text{bending}} < P_{\text{axial}}$, bending governs the design.
 
 ---
 
 <a name="center-point-load"></a>
 ### **3.5 Calculation of Load Capacity at the Center Point**
 
-**a. Vertical Load Contribution per Tube**
+**Vertical Load Contribution per Tube**
 
-**Angle to Horizontal (\( \theta_h = 71.87^\circ \))**
+The limiting axial load per tube is $P_{\text{bending}} = 39.33\,\text{kN}$.
 
-**Secant of Angle (\( \sec(\theta_h) \))**
+Angle from horizontal: $\theta_1 = 18.8^\circ$.
 
-$$
-\sec(\theta_h) = \frac{1}{\cos(\theta_h)} = \frac{1}{\cos(71.87^\circ)} = \frac{1}{0.3145} = 3.178
-$$
-
-**Vertical Load per Tube (\( F_{\text{vertical}} \))**
+Vertical component:
 
 $$
-F_{\text{vertical}} = P_{\text{bending}} \times \sec(\theta_h) = 39.33\, \text{kN} \times 3.178 = 125.00\, \text{kN}
+F_{\text{vertical}} = P_{\text{bending}} \times \sin(\theta_1) = 39.33\,\text{kN} \times 0.322 \approx 12.66\,\text{kN}
 $$
 
-**b. Total Load Capacity at Center Point**
+**Total Vertical Load at Center Point**
 
-**Number of Tubes (\( n = 6 \))**
-
-**Total Vertical Load (\( P_{\text{total}} \))**
+Number of tubes $n = 6$ :
 
 $$
-P_{\text{total}} = n \times F_{\text{vertical}} = 6 \times 125.00\, \text{kN} = 750.00\, \text{kN}
+P_{\text{total}} = n \times F_{\text{vertical}} = 6 \times 12.66\,\text{kN} = 75.96\,\text{kN}
 $$
 
-**Convert to Kilograms (\( g = 9.81\, \text{m/s}^2 \))**
+Convert to kilograms ( $g = 9.81\,\text{m/s}^2$ ):
 
 $$
-\text{Total Load Capacity} = \frac{ P_{\text{total}} }{ g } = \frac{ 750,000\, \text{N} }{ 9.81\, \text{m/s}^2 } \approx 76,455\, \text{kg}
+\text{Total Load (kg)} = \frac{75,960\,\text{N}}{9.81\,\text{m/s}^2} \approx 7,740\ \text{kg}
 $$
 
-**c. Applying a Safety Factor**
-
-**Assuming a Safety Factor of 2.0**
-
-$$
-\text{Safe Load Capacity} = \frac{ 76,455\, \text{kg} }{ 2.0 } = 38,227\, \text{kg}
-$$
-
-**d. Summary**
-
-- **Maximum Load Before Bending (with Safety Factor):** Approximately **38,227 kg**
-
----
-
-<a name="strength-other-points"></a>
-## **4. Strength of Other Points in the Dome**
-
-<a name="load-distribution"></a>
-### **4.1 Load Distribution in a Geodesic Dome**
-
-- **Structural Interconnectivity:** The geodesic dome's network of triangles allows loads applied at any point to be distributed throughout the entire structure.
-- **Redundancy:** Multiple load paths reduce the stress on individual members, enhancing overall strength.
-- **Global Behavior:** The dome acts as an integrated whole rather than a collection of isolated elements.
-
-<a name="increased-strength"></a>
-### **4.2 Increased Strength at Other Points**
-
-- **Lower-Stressed Areas:** Points further from the center typically experience less stress due to the dome's geometry and load distribution.
-- **Angle of Inclination:** Tubes at other points may be more vertical, reducing bending stresses and increasing axial load capacity.
-- **Additional Support:** Rings and interconnected members provide extra support, making these points stronger than the center point.
-
-**Example:**
-
-- **At Lower Points in the Dome:**
-  - **Angles to Horizontal are Smaller**, meaning tubes are more vertical.
-  - **Bending Moments are Reduced**, as eccentricities have less impact.
-  - **Axial Loads are Supported More Efficiently**, increasing load capacity.
 
 ---
 
 <a name="conservative-estimate"></a>
-## **5. Conservative Nature of the Estimate**
+## **4. Conservative Nature of the Estimate**
 
-<a name="load-sharing"></a>
-### **5.1 Load Sharing and Structural Redundancy**
+<a name="load-sharing-and-structural-redundancy"></a>
+### **4.1 Load Sharing and Structural Redundancy**
 
-- **Conservative Calculations:** The analysis focuses on the weakest component (flat ends at the center point) without considering the dome's overall ability to distribute loads.
-- **Load Redistribution:** In reality, the dome's geometry allows for load sharing among many members, reducing the load on any single component.
-- **Safety Margin:** The calculated capacity is intentionally conservative to ensure safety.
+- Conservative Calculations: This analysis is focused on the weakest vertex in the structure.
+- Load Redistribution: The calcuation is based only on the strength, length and angles of the steal. We are not taking into account the fact that the rest of the dome will share load, reducing stress on individual vertices. The actual maximum capacity for the center point of the dome is likely much higher due to shared load distribution.
 
 <a name="potential-capacity"></a>
-### **5.2 Potential for Higher Load Capacity**
+### **4.2 Potential for Higher Load Capacity**
 
-- **Global Structural Analysis:** A comprehensive analysis considering all members and connections could reveal a higher load capacity.
-- **Finite Element Analysis (FEA):** Using FEA software can model complex interactions and more accurately predict load capacities.
-- **Inherent Strength of Geodesic Domes:** The dome's shape inherently distributes forces efficiently, potentially supporting greater loads than calculated in a localized analysis.
+- Global Analysis: Considering all members should reveal higher capacity.
+- FEA: Complex interactions modeled in software.
+- Inherent Strength: Dome shape distributes forces efficiently, likely supporting more load.
+
+---
+
+<a name="strength-other-points"></a>
+## **5. Strength of Other Points in the Dome**
+
+<a name="load-distribution"></a>
+### **5.1 Load Distribution in a Geodesic Dome**
+
+- Structural Interconnectivity: The dome’s triangular network distributes loads globally.
+- Redundancy: Multiple load paths reduce stress on any single member.
+- Global Behavior: The dome acts as an integrated whole.
+
+<a name="increased-strength"></a>
+### **5.2 Increased Strength at Other Points**
+
+- Less-Stressed Areas: Points away from the center see lower stress.
+- Steeper Angles: More vertical tubes increase vertical load capacity.
+- Additional Support: Rings and interconnections enhance strength.
 
 ---
 
 <a name="conclusion"></a>
 ## **6. Conclusion**
 
-The calculated **safe load capacity at the center point** of the geodesic dome is approximately **38,227 kilograms**, considering the bending capacity of the flat compressed ends and applying a safety factor of 2.0. This estimate is conservative, focusing on the weakest component and not accounting for the dome's overall load distribution capabilities.
+The calculated **safe load capacity at the center point** of the geodesic dome is about **7,740 kilograms**, considering bending in the flat ends. This is a conservative estimate focusing on the weakest component and not considering global load sharing. When determining safe rigging, it's important to apply a safety factor of 10:1.
 
 **Key Points:**
 
-- **Bending Capacity Governs the Design:** The flat ends' susceptibility to bending under small eccentricities limits the load capacity.
-- **Other Points are Stronger:** Due to structural redundancy and geometry, other points in the dome can support greater loads.
-- **Load Distribution Enhances Capacity:** The dome's interconnected structure allows for load sharing, potentially increasing overall load capacity.
+- **Bending Governs:** Flat ends’ bending capacity is the limiting factor.
+- **Other Points Stronger:** Due to geometry and redundancy, other points may carry more load.
+- **Load Distribution Helps:** The interconnected structure can share loads and increase capacity.
 
 ---
 
 <a name="recommendations"></a>
 ## **7. Recommendations**
 
-1. **Perform a Comprehensive Structural Analysis:**
-   - Utilize Finite Element Analysis to model the entire dome and capture global load distribution effects.
-   - Consider all load cases, including environmental and dynamic loads.
+1. **Comprehensive Structural Analysis:**
+   - Use FEA to model the entire dome.
+   - Consider environmental and dynamic loads.
 
-2. **Optimize the Design:**
-   - **Increase Thickness of Flat Ends:** Enhancing bending capacity.
-   - **Use Higher-Strength Steel:** To increase both axial and bending capacities.
-   - **Improve Connections:** Design connections to minimize eccentricities and enhance load transfer.
+2. **Optimize Design:**
+   - Improve connections to minimize eccentricities.
+   - Divide rigs among multiple points to share load
 
 3. **Consult a Structural Engineer:**
-   - Professional assessment is essential to validate calculations and ensure safety.
-   - An engineer can provide insights into potential design improvements and compliance with building codes.
+   - Validate calculations and ensure code compliance.
 
-4. **Implement Quality Construction Practices:**
-   - Ensure precise fabrication and assembly to minimize imperfections and misalignments.
-   - Regular inspections and maintenance to detect and address any structural issues early.
-
----
-
-**Disclaimer:** The calculations provided are based on the information given and standard engineering formulas. They are intended for preliminary assessment purposes. A professional structural engineer should review and validate these calculations before making design decisions or proceeding with construction.
+4. **Quality Construction:**
+   - Precise fabrication and assembly reduce imperfections.
+   - Regular inspections and maintenance.
 
 ---
 
-**Appendix:**
-
-For further understanding, it's recommended to:
-
-- **Study the behavior of geodesic domes under load.**
-- **Refer to structural engineering textbooks** for detailed explanations of bending, buckling, and load distribution.
-- **Review building codes and standards** relevant to your location and project scope.
-
----
-
-**Note:** All mathematical expressions have been formatted using LaTeX syntax enclosed within double dollar signs `$$ ... $$` to ensure proper rendering on GitHub. Equations are introduced with headings or bold text, and care has been taken to avoid placing equations within list items to prevent rendering issues.
-
----
-
+**Disclaimer:** These calculations are based on given approximations and standard engineering formulas and serve as a preliminary assessment. A professional engineer should review and validate the calculations to confirm this analysis.
