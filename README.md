@@ -196,6 +196,8 @@ $$
 
 The limiting axial load per tube is $P_{\text{bending}} = 39.33\,\text{kN}$.
 
+Because the horizontal component of the force is constrained by the rings, we need only to consider the vertical component of the force.
+
 Angle from horizontal: $\theta_1 = 18.8^\circ$.
 
 Vertical component:
